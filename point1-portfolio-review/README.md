@@ -65,6 +65,12 @@ ctaShort: 'Request a Callback',
 
 "Request a Callback" follows the reference form Arjun shared. "Apply Now" or "Click Now" is a two-string swap.
 
+## Hosting (Railway)
+
+The folder is deployable as-is. In Railway: **New Project → Deploy from GitHub repo → `arjun-midha580/TEST-REPO`**, branch `claude/friendly-archimedes-hb2klc`, and set the service's **Root Directory** to `/point1-portfolio-review`. Railway detects the `package.json`, runs `npm start` (a tiny static server bound to `$PORT`) and gives you a public domain under **Settings → Networking → Generate Domain**. Every push to the branch redeploys.
+
+To let Claude deploy directly next time, add a `RAILWAY_TOKEN` secret to the Claude Code environment and allow `backboard.railway.com` in its network policy.
+
 ## Integration (for the developer)
 
 Set `window.P1_CONFIG` before the page script, or edit the defaults in the file:
