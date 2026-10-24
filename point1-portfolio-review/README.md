@@ -1,54 +1,62 @@
-# Point-1 Club · Free Portfolio Review LP (v1.1 draft)
+# Point-1 Club · Portfolio Review LP (v2 draft)
 
 **File:** `point1-portfolio-review/index.html` (single file, no dependencies beyond Google Fonts)
 **Replaces:** thepersonalcfo.in
-**Job:** turn Sharan's "free portfolio review" ads into OTP-verified, qualified applications. PMS is pitched on the call, not on the page.
+**Job:** turn Sharan's "free portfolio review" ads into OTP-verified callback requests from investors with ₹50 L+ portfolios. The managed-strategies (PMS) conversation happens on the call; the page says so plainly.
 **Status:** first draft for review. Preview mode is on (no SMS, any 6-digit OTP passes).
 
 ---
+
+## What changed in v2 (24 Oct, after Arjun's review)
+
+- **Form in the fold, one screen.** Name, email, one qualifying dropdown (investments today), best time to call, phone with Send OTP inline, six-box OTP inline, submit greyed until verified. Built off the reference card Arjun shared. The modal, the three chip questions and the exit-intent popup are gone.
+- **One qualifying question, not three.** "Investments today" in four ranges (₹50 L to 1 Cr, 1 to 5 Cr, 5 Cr+, under 50 L). No SIP, no income. It reads as routing, not prying.
+- **30 minutes everywhere.** Call length, steps, FAQ, success screen.
+- **No PAN, no CAS, no account aggregator.** The only data line left is "have your apps or statements handy, no passwords, ever".
+- **Copy rewritten for a ₹50 L+ investor, 28 to 45.** Hero is the outcome ("Your portfolio, reviewed by a Personal CFO") with three outcome bullets. The ad-mirror pain tiles, "22 funds, mostly the same stocks", "₹25,000 a month in SIPs" and the question hook are gone.
+- **"Nothing to buy" is gone.** Replaced with the app's own line, "Free · 30 minutes · No commitment", and a plain "Where this can lead" box that says the Personal CFO may show you Point-1 Club's managed strategies.
+- **Gruhas / Nikhil Kamath removed** from the trust strip and the founder bullets.
+- **Point-1 Club services section added**, lifted from the in-app Point-1 Club page: full review, investment strategies, tax, insurance, credit cards, private sessions and the circle. This is the aspirational layer.
+- **Sharan's full quote** from the app replaces the short one.
 
 ## What the page does
 
 | Section | Job | Notes |
 | --- | --- | --- |
-| Header | Logo + one CTA | Zero nav links. SEBI RIA pill on desktop. |
-| Hero | The question hook + sample output | "What did your money actually return?" uses the winning 1% Club mechanic: a number about them they can't answer today. Right side shows the actual review output (sample figures from the Point-1 review doc). |
-| Trust strip | 5 proof points | SEBI RIA, ₹5,000 Cr+ tracked, 3,000+ families, 7L+ members, Gruhas. See "Numbers to confirm". |
-| Sound familiar | 4 pain tiles | One tile per ad script: Funds Bleeding, Rahul RM, Decision Making, plus overlap. |
-| What the review covers | 8 checks, sample stats | Mirrors the 8 parameters of the Point-1 review. |
-| How it works | 4 steps + "the honest part" | Pre-empts the "what's the catch" objection. Says PMS may come up, nothing is sold on the call. |
-| Review vs RM | Comparison table | Answers the Rahul RM ad directly. Stacks into cards on phones. |
-| Founder | Sharan module | Portrait slot, quote, 4 credentials. |
-| Who it's for | Soft qualification | ₹25k SIP / ₹25 L invested / ₹25 L income. Pre-frames the form questions so they don't feel like a filter. |
-| Proof | Press wordmarks + 3 quote slots | Quote slots are dashed placeholders. Fill only with verified client quotes. |
-| FAQ | 8 conversion blockers | Free, who, passwords, time, minimum, PMS pitch, why OTP, data. |
-| Final band | Ad line as headline | "One conversation. The kind you've been avoiding." |
-| Sticky bar | Phone only | Appears once the hero CTA scrolls out. |
-| Exit intent | One field | Mobile only field, feeds the same OTP flow with the number pre-filled. |
+| Header | Logo + one CTA | Every CTA scrolls to the form. |
+| Hero + form | Outcome headline, three outcomes, the request form | Yellow top bar "Limited review slots each week", line "Next available slot: within 48 hours" (both need ops sign-off). |
+| Trust strip | SEBI RIA, ₹5,000 Cr+, 3,000+ families, 7L+ members, 30 min | |
+| What you walk away with | Sample review card + three outcomes | Sample figures from the Point-1 review doc. |
+| What we look at | Six checks with sample stats | Real return, fund quality, allocation, concentration and overlap, cost drag, tax efficiency. |
+| How it works | Three steps, 30 minutes | "Where this can lead" box names the managed-strategies conversation. |
+| Point-1 Club | Six service cards, dark | From the in-app page. |
+| Personal CFO vs bank RM | Comparison table | Stacks into cards on phones. |
+| Founder | Sharan module | Portrait slot, full quote, three credentials. |
+| Who it's for | Three statements, ₹50 L+ | "Not there yet" line routes to the app's AI CFO. |
+| Proof | Sky band, press wordmarks, three quote slots | Slots only. Pull the app's Point-1 Club testimonials or verified quotes. |
+| FAQ | Seven questions | Free, who, own strategies, what to bring, minimum, OTP, data. |
+| Final band | "One conversation. A plan for the next decade." | Scrolls to the form. |
+| Sticky bar | Phone only, shows while the form is off screen | |
 
-## The application flow (modal)
+## The request flow (inline)
 
-1. **Name + mobile** → Send OTP
-2. **6-digit OTP** → auto-advance, paste, resend after 30s, change number
-3. **Three required questions** as tap chips: monthly SIP, invested assets, annual income. Two optional: where the money sits, biggest worry.
-4. **Done** screen with reference ID and the three next steps.
+1. Fill name, email, investments today, best time to call (optional).
+2. Enter phone, tap **Send OTP**. Six boxes appear under the phone row. Auto-advance, paste, resend after 30s, change number.
+3. On a match the phone button turns green "Verified" and **Request a Callback** activates.
+4. Submit replaces the form with the received state: reference ID and three next steps.
 
-Lead tier is computed client-side and sent with the payload so routing can happen before anyone reads the lead:
-
-- **A** → ₹50 L+ invested, or ₹50k+ monthly SIP, or ₹50 L+ income with ₹25 L+ invested. Done screen says "A Personal CFO calls within 24 hours".
-- **B** → ₹25 L+ invested, or ₹25k+ SIP, or ₹25 L+ income.
-- **C** → everything else. Done screen says "Our team calls within 48 hours".
+Lead tier is computed from the one dropdown and sent with the payload: **A** = ₹1 Cr+, **B** = ₹50 L to 1 Cr, **C** = under ₹50 L. A and B see "A Personal CFO calls you within 24 hours"; C sees "Our team calls you within 48 hours" and can be routed to the app's AI CFO review.
 
 ## CTA label
 
-One constant, used everywhere. Change it in `P1_CONFIG` and every button updates:
+One pair of constants, used everywhere. Change them in `P1_CONFIG` and every button updates:
 
 ```js
-ctaLong: 'Apply for My Free Review',
-ctaShort: 'Apply Now',
+ctaLong: 'Request a Callback',
+ctaShort: 'Request a Callback',
 ```
 
-The brief said "Click Now". I went with "Apply" because the page positions the review as something you qualify for, which matches the invite-only tone of the Point-1 review doc and feeds the qualification questions naturally. Swap the two strings above if you want the literal copy.
+"Request a Callback" follows the reference form Arjun shared. "Apply Now" or "Click Now" is a two-string swap.
 
 ## Integration (for the developer)
 
@@ -68,13 +76,11 @@ Lead payload:
 ```json
 {
   "name": "Rohan Malhotra",
+  "email": "rohan@company.com",
   "phone": "+919876543210",
   "otp_verified": true,
-  "sip_monthly": "₹50,000 to ₹1 L", "sip_code": "3",
-  "liquid_assets": "₹1 to 5 Cr", "assets_code": "4",
-  "annual_income": "₹50 L to 1 Cr", "income_code": "3",
-  "holdings": ["mf", "stocks", "fd"],
-  "concern": "toomany",
+  "investments": "₹1 Cr to ₹5 Cr", "investments_code": 2,
+  "call_time": "evening",
   "tier": "A",
   "source_cta": "hero",
   "utm": { "utm_source": "ig", "utm_campaign": "funds_bleeding" },
@@ -84,7 +90,7 @@ Lead payload:
 
 OTP provider: MSG91 or Exotel both work with this shape. Rate-limit `otpSendUrl` per number (3 per 10 minutes) and expire codes at 5 minutes.
 
-Tracking: paste the Meta Pixel and GA4/GTM snippets in the head comment. The page fires `Lead` on OTP verification and `CompleteRegistration` on submit, and pushes every step to `dataLayer`: `cta_click`, `otp_sent`, `otp_verified`, `otp_resent`, `application_submitted` (with `tier`), `exit_intent_shown`. Optimise the Meta campaign on `CompleteRegistration`.
+Tracking: paste the Meta Pixel and GA4/GTM snippets in the head comment. The page fires `Lead` on OTP verification and `CompleteRegistration` on the callback request, and pushes every step to `dataLayer`: `cta_click`, `otp_sent`, `otp_verified`, `otp_resent`, `callback_requested` (with `tier`). Optimise the Meta campaign on `CompleteRegistration`.
 
 ## Assets needed from 1% Club
 
@@ -105,47 +111,20 @@ All of these are on the page. Each needs a yes from the client or a source.
 | ₹5,000 Cr+ wealth tracked | Point-1 review doc and the Pro checkout page | Medium. Public press says ₹2,000 Cr AUA and ₹4,000 Cr tracked. Pick one wording. |
 | 3,000+ families advised | Point-1 review doc | Medium |
 | 7L+ 1% Club members | Pro checkout page trust strip | Medium. App launch decks say 6L+ users. |
-| Backed by Gruhas, Nikhil Kamath's fund | Inc42 coverage | High |
 | Forbes 30 Under 30 Asia, 2023 | Multiple bios | High |
-| "A Personal CFO calls within 24 hours" (tier A) and "within 48 hours" | Service promise I set | Needs ops sign-off |
-| ₹25 L / ₹25k thresholds in "Who it's for" | My call, softer than the review doc's ₹50 L | Client decision |
-| "Nothing is bought or sold on the call" | From the ad scripts | Needs sales sign-off |
+| "A Personal CFO calls within 24 hours" (tiers A and B), "within 48 hours" (C), "Next available slot: within 48 hours", "Limited review slots each week" | Service promises I set | Needs ops sign-off |
+| ₹50 L threshold in the tag, "Who it's for" and the FAQ | Arjun's brief, matches the review doc | Confirmed |
+| "Where this can lead" box: the Personal CFO may show managed strategies and fees on the call | Arjun's brief | Confirmed |
 
 ## What I'd test first
 
-1. **Hero headline.** "What did your money actually return?" vs the ad line "Your bank doesn't care about your portfolio" vs "Nothing to buy. No course. No membership." The first is the strongest on the 1% Club message filter, but the ad line has the tightest message match.
-2. **Form position.** Modal on click (current) vs an inline form in the hero on desktop. Modal keeps the hero clean and works on phones; inline usually wins on desktop for cold traffic.
-3. **Qualification before or after OTP.** Currently after, so every verified number is captured even if they abandon the questions. If lead quality is the problem, move the three questions before the OTP.
-4. **Thresholds.** ₹25 L vs ₹50 L in "Who it's for". Higher cuts volume, lifts tier-A share.
+1. **Hero headline.** "Your portfolio, reviewed by a Personal CFO" vs "Know exactly what your portfolio should look like" vs "A second opinion on ₹50 lakh and above".
+2. **Top bar.** "Limited review slots each week" vs a dated line like the reference ("Reviews this week: 25 slots"), once ops confirms a real number.
+3. **OTP before or after the qualifying dropdown.** Currently the dropdown sits above the phone row. If drop-off shows at the dropdown, move it below the OTP so every verified number is captured first.
+4. **Sample card position.** Below the fold (current) vs replacing the three outcome bullets in the hero on desktop.
 
-## Design system (v1.1): 1% Club brand, not a palette I made up
+## Not done in v2
 
-Pulled from the 1% Club Figma files (Brand & Product, OPC Website) on 24 Oct 2026. Every colour on the page comes from these ramps.
-
-| Token | Value | Source |
-| --- | --- | --- |
-| Dark surfaces L0 / L1 / L2 | #000000 / #141414 / #1C1F22 | App DSL, dark mode |
-| Light surfaces L0 / L1 | #F3F4F7 / #FFFFFF | App DSL, light mode |
-| Text primary / body / subtle | #222222 / #393939 / #757575 | Website variables |
-| Separators | #EAEAEA, #D7D7D7 | Website variables |
-| Blue 500 / 700 | #35A0FD / #2672B4 | Foundation/Blue |
-| Yellow 500 / brand | #FCD65F / #F1B600 | Foundation/Yellow, Default/Brand Yellow |
-| Green 500 / 700 | #58CB82 / #018949 | Foundation/Green, Success |
-| Orange 500 | #FB9F3C | Foundation/Orange |
-| Violet 500 | #9981EB | Foundation/Violet |
-| Red 500 | #C00F0D | Foundation/Error red |
-| Radius | 6px (4px small), 12px on cards | App DSL |
-
-How it is used on this page: black hero and final band with yellow as the highlight (the way the in-app Point-1 Club page highlights "top 0.1%"), white buttons on dark and off-black buttons on light (website and app CTAs), light panels with the blue rule above each heading (website feature panels), green for positive and trust ticks, the purple-to-peach sky gradient for the proof band (website testimonial section), pixel-cluster icons in one ramp each.
-
-**Fonts.** The website headings are set in Season Mix, a licensed face that is not on Google Fonts. The page uses Newsreader as the stand-in; swap `--display` to Season Mix when the font files are available. Body is Manrope, same as the website (the app uses Figtree).
-
-**Logo.** The header and footer use the 1% Club tile mark cropped from the brand file as a PNG. Replace with the SVG export from "New Brand Logo" in the Brand & Product file.
-
-**Photo slots.** The brand leans on photography (grass hero, sunset envelope on the Point-1 page, sky and mountains in the panels). The hero currently uses a dusk gradient glow in the brand violet and orange. Drop the Point-1 envelope image or the grass hero behind it when the files come through.
-
-## Not done in v1
-
-- No WhatsApp CTA. The brief said one action across the board. Easy to add a WhatsApp fallback in the done screen if the ops team wants it.
-- No testimonial copy. Slots only. I won't invent client quotes on a SEBI-regulated page.
+- No WhatsApp CTA. One action across the board. A WhatsApp line on the received screen is a one-line add.
+- No testimonial copy. Slots only. The in-app Point-1 Club page already carries client reviews (Radhesh Bhat and others); export those.
 - Single theme, by design: the 1% Club website and app define their own dark and light surfaces, so the page does not follow the OS theme.
