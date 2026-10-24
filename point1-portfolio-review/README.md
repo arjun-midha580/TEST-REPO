@@ -1,4 +1,4 @@
-# Point-1 Club · Portfolio Review LP (v2 draft)
+# Point-1 Club · Portfolio Review LP (v3 draft)
 
 **File:** `point1-portfolio-review/index.html` (single file, no dependencies beyond Google Fonts)
 **Replaces:** thepersonalcfo.in
@@ -7,35 +7,34 @@
 
 ---
 
-## What changed in v2 (24 Oct, after Arjun's review)
+## What changed in v3 (24 Oct, mobile-first pass)
 
-- **Form in the fold, one screen.** Name, email, one qualifying dropdown (investments today), best time to call, phone with Send OTP inline, six-box OTP inline, submit greyed until verified. Built off the reference card Arjun shared. The modal, the three chip questions and the exit-intent popup are gone.
-- **One qualifying question, not three.** "Investments today" in four ranges (₹50 L to 1 Cr, 1 to 5 Cr, 5 Cr+, under 50 L). No SIP, no income. It reads as routing, not prying.
-- **30 minutes everywhere.** Call length, steps, FAQ, success screen.
-- **No PAN, no CAS, no account aggregator.** The only data line left is "have your apps or statements handy, no passwords, ever".
-- **Copy rewritten for a ₹50 L+ investor, 28 to 45.** Hero is the outcome ("Your portfolio, reviewed by a Personal CFO") with three outcome bullets. The ad-mirror pain tiles, "22 funds, mostly the same stocks", "₹25,000 a month in SIPs" and the question hook are gone.
-- **"Nothing to buy" is gone.** Replaced with the app's own line, "Free · 30 minutes · No commitment", and a plain "Where this can lead" box that says the Personal CFO may show you Point-1 Club's managed strategies.
-- **Gruhas / Nikhil Kamath removed** from the trust strip and the founder bullets.
-- **Point-1 Club services section added**, lifted from the in-app Point-1 Club page: full review, investment strategies, tax, insurance, credit cards, private sessions and the circle. This is the aspirational layer.
-- **Sharan's full quote** from the app replaces the short one.
+- **Hero cut to three lines.** Tag, headline, "30 minutes. Every holding. A written plan.", three micro words, then the form. A compounding line draws itself across the hero on load (brand yellow, with a soft glow and a pulsing endpoint). On phones it sits behind the headline.
+- **The gap chart (new section 2).** ₹1 Cr over five years at three rates: the sample portfolio (7.0%), the market (13.5%) and the Point-1 Club strategy (27.0%, the five-year CAGR from the review doc). Curves draw in sequence on scroll, end values count up, a ₹1 / ₹2 / ₹5 Cr toggle rescales the labels, hovering a legend row highlights its curve. Disclaimer under it. The 27% line is the client's own number; it needs compliance sign-off because it is a PMS performance figure on a public page.
+- **Six readings (what we look at).** Each check has its own micro-visualisation: return bars, a 22-square fund-rating grid, an allocation stack, a 35-dot concentration map, a cost-drag counter, after-tax bars. All animate on scroll.
+- **Three steps on a dotted path.** Blue dotted line that draws itself through three yellow nodes: a wave on desktop, a vertical line on phones. One line of copy per step.
+- **Before and after (new).** Four counters from the sample plan: funds 22 to 6, stocks 35 to 18, weak-rated money ₹13.8 L to ₹0, deposit income 4.6% to 7.0% after tax. Replaces the bank-RM comparison table.
+- **Removed:** the comparison table, the Point-1 Club services section, the "Where this can lead" box, the "Will you recommend your own strategies" FAQ, the "Not there yet, AI CFO" line, the "wealth arm of 1% Club" sentence after Sharan, and the three outcome bullets in the hero.
+- **Reviews:** a swipe carousel on phones (snap scroll, dots), three-up on desktop, with the brand's pixel quote mark, avatar initials and green stars.
+
+**Animation references used:** Robinhood and Linear for the self-drawing line charts (stroke-dashoffset), Apple's keynote counters for the number count-ups, Stripe's dotted connectors for the step path, the 1% Club website's own staggered reveals for the grids.
 
 ## What the page does
 
-| Section | Job | Notes |
+| Section | Job | Animation |
 | --- | --- | --- |
-| Header | Logo + one CTA | Every CTA scrolls to the form. |
-| Hero + form | Outcome headline, three outcomes, the request form | Yellow top bar "Limited review slots each week", line "Next available slot: within 48 hours" (both need ops sign-off). |
+| Header | Logo + one CTA | |
+| Hero + form | Headline, one line, the request form | Compounding line draws on load |
 | Trust strip | SEBI RIA, ₹5,000 Cr+, 3,000+ families, 7L+ members, 30 min | |
-| What you walk away with | Sample review card + three outcomes | Sample figures from the Point-1 review doc. |
-| What we look at | Six checks with sample stats | Real return, fund quality, allocation, concentration and overlap, cost drag, tax efficiency. |
-| How it works | Three steps, 30 minutes | "Where this can lead" box names the managed-strategies conversation. |
-| Point-1 Club | Six service cards, dark | From the in-app page. |
-| Personal CFO vs bank RM | Comparison table | Stacks into cards on phones. |
-| Founder | Sharan module | Portrait slot, full quote, three credentials. |
-| Who it's for | Three statements, ₹50 L+ | "Not there yet" line routes to the app's AI CFO. |
-| Proof | Sky band, press wordmarks, three quote slots | Slots only. Pull the app's Point-1 Club testimonials or verified quotes. |
-| FAQ | Seven questions | Free, who, own strategies, what to bring, minimum, OTP, data. |
-| Final band | "One conversation. A plan for the next decade." | Scrolls to the form. |
+| The gap | ₹1 Cr, five years, three rates | Curves draw, values count, toggle rescales |
+| Six readings | The checks, one micro-viz each | Bars, grid, stack, dots, counter |
+| Three steps | Request, review, plan | Dotted path draws through the nodes |
+| What changes | Sample plan before and after | Counters run from before to after |
+| Founder | Sharan, full quote, three credentials | |
+| Who it's for | Three statements, ₹50 L+ | |
+| Proof | Sky band, press, three quote slots | Swipe carousel on phones |
+| FAQ | Five questions | |
+| Final band | "One conversation. A plan for the next decade." | |
 | Sticky bar | Phone only, shows while the form is off screen | |
 
 ## The request flow (inline)
