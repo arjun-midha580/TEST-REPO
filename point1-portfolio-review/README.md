@@ -1,4 +1,4 @@
-# Point-1 Club · Portfolio Review LP (v3 draft)
+# Point-1 Club · Portfolio Review LP (v3.1 draft)
 
 **File:** `point1-portfolio-review/index.html` (single file, no dependencies beyond Google Fonts)
 **Replaces:** thepersonalcfo.in
@@ -6,6 +6,14 @@
 **Status:** first draft for review. Preview mode is on (no SMS, any 6-digit OTP passes).
 
 ---
+
+## What changed in v3.1 (24 Oct, after Arjun's note)
+
+- **"Personal CFO" is gone from the page.** It clashes with the AI CFO positioning. Every mention is now "wealth expert", "the Point-1 Club team" or "the team that manages ₹5,000 Cr+". The one remaining "CFO" on the page is the BW CFO World press wordmark.
+- **The hero pitches time.** "You don't have time to manage your money. We do." then "30 minutes. Every holding. The exact steps, written." and "By the team that manages ₹5,000 Cr+. SEBI-registered."
+- **The time angle runs through the page.** Steps: "Thirty minutes of your time. The rest is ours." What changes: "Funds, stocks, deposits, PMS, property. Nobody with a day job has the time to keep all of it on one plan. The review does, and hands you the steps." Who it's for: the third tile is now "You don't have the time".
+- **"The exact steps"** replaces "a plan" wherever the written output is mentioned.
+- **Trust strip** now reads "₹5,000 Cr+ wealth managed" (was "tracked"), per Arjun. Public press says ₹2,000 Cr under advisory and ₹4,000 to 5,000 Cr tracked on the platform, so this wording needs the client's sign-off before launch.
 
 ## What changed in v3 (24 Oct, mobile-first pass)
 
@@ -107,7 +115,7 @@ All of these are on the page. Each needs a yes from the client or a source.
 | Claim | Where it came from | Confidence |
 | --- | --- | --- |
 | SEBI Registered Investment Adviser | Inc42, Entrepreneur India, Feb 2025 | High |
-| ₹5,000 Cr+ wealth tracked | Point-1 review doc and the Pro checkout page | Medium. Public press says ₹2,000 Cr AUA and ₹4,000 Cr tracked. Pick one wording. |
+| ₹5,000 Cr+ wealth managed, and "the team that manages ₹5,000 Cr+" | Arjun's brief, matches the Point-1 review doc | Medium. Public press says ₹2,000 Cr under advisory and ₹4,000 to 5,000 Cr tracked. Client sign-off needed. |
 | 3,000+ families advised | Point-1 review doc | Medium |
 | 7L+ 1% Club members | Pro checkout page trust strip | Medium. App launch decks say 6L+ users. |
 | Forbes 30 Under 30 Asia, 2023 | Multiple bios | High |
