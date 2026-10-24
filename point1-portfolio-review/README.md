@@ -1,4 +1,4 @@
-# Point-1 Club · Free Portfolio Review LP (v1 draft)
+# Point-1 Club · Free Portfolio Review LP (v1.1 draft)
 
 **File:** `point1-portfolio-review/index.html` (single file, no dependencies beyond Google Fonts)
 **Replaces:** thepersonalcfo.in
@@ -118,8 +118,34 @@ All of these are on the page. Each needs a yes from the client or a source.
 3. **Qualification before or after OTP.** Currently after, so every verified number is captured even if they abandon the questions. If lead quality is the problem, move the three questions before the OTP.
 4. **Thresholds.** ₹25 L vs ₹50 L in "Who it's for". Higher cuts volume, lifts tier-A share.
 
+## Design system (v1.1): 1% Club brand, not a palette I made up
+
+Pulled from the 1% Club Figma files (Brand & Product, OPC Website) on 24 Oct 2026. Every colour on the page comes from these ramps.
+
+| Token | Value | Source |
+| --- | --- | --- |
+| Dark surfaces L0 / L1 / L2 | #000000 / #141414 / #1C1F22 | App DSL, dark mode |
+| Light surfaces L0 / L1 | #F3F4F7 / #FFFFFF | App DSL, light mode |
+| Text primary / body / subtle | #222222 / #393939 / #757575 | Website variables |
+| Separators | #EAEAEA, #D7D7D7 | Website variables |
+| Blue 500 / 700 | #35A0FD / #2672B4 | Foundation/Blue |
+| Yellow 500 / brand | #FCD65F / #F1B600 | Foundation/Yellow, Default/Brand Yellow |
+| Green 500 / 700 | #58CB82 / #018949 | Foundation/Green, Success |
+| Orange 500 | #FB9F3C | Foundation/Orange |
+| Violet 500 | #9981EB | Foundation/Violet |
+| Red 500 | #C00F0D | Foundation/Error red |
+| Radius | 6px (4px small), 12px on cards | App DSL |
+
+How it is used on this page: black hero and final band with yellow as the highlight (the way the in-app Point-1 Club page highlights "top 0.1%"), white buttons on dark and off-black buttons on light (website and app CTAs), light panels with the blue rule above each heading (website feature panels), green for positive and trust ticks, the purple-to-peach sky gradient for the proof band (website testimonial section), pixel-cluster icons in one ramp each.
+
+**Fonts.** The website headings are set in Season Mix, a licensed face that is not on Google Fonts. The page uses Newsreader as the stand-in; swap `--display` to Season Mix when the font files are available. Body is Manrope, same as the website (the app uses Figtree).
+
+**Logo.** The header and footer use the 1% Club tile mark cropped from the brand file as a PNG. Replace with the SVG export from "New Brand Logo" in the Brand & Product file.
+
+**Photo slots.** The brand leans on photography (grass hero, sunset envelope on the Point-1 page, sky and mountains in the panels). The hero currently uses a dusk gradient glow in the brand violet and orange. Drop the Point-1 envelope image or the grass hero behind it when the files come through.
+
 ## Not done in v1
 
 - No WhatsApp CTA. The brief said one action across the board. Easy to add a WhatsApp fallback in the done screen if the ops team wants it.
 - No testimonial copy. Slots only. I won't invent client quotes on a SEBI-regulated page.
-- Light theme only, by design. The review doc is a white-world document and the LP matches it.
+- Single theme, by design: the 1% Club website and app define their own dark and light surfaces, so the page does not follow the OS theme.
