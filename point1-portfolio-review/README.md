@@ -159,5 +159,5 @@ Tracking: paste the Meta Pixel and GA4/GTM snippets in the head comment. The pag
 
 - No WhatsApp CTA. One action across the board.
 - No testimonial copy. Slots only. Export the client reviews from the app.
-- The Figma file still shows v3.1 (Point-1 Club naming, six readings, "What changes"). Re-sync after the copy is signed off, so it's done once.
+- The Figma file (Desktop 1440 and Mobile 390 frames) is synced to v4: naming, five readings, the "What you get after the call" row and the sample report card, plus the v4 copy wherever a text node matched. The collapsed FAQ answers 2 to 5 exist only on the page.
 - Single theme, by design: the 1% Club website and app define their own dark and light surfaces, so the page does not follow the OS theme.
