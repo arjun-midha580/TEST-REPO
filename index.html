@@ -193,10 +193,10 @@ section.alt{background:var(--l0)}
 .trust .t{padding:20px 18px 20px 0;border-bottom:1px solid var(--d-line);display:grid;gap:4px}
 .trust .t:nth-child(odd){border-right:1px solid var(--d-line);padding-right:18px}
 .trust .t:nth-child(even){padding-left:18px}
-.trust .t:last-child{grid-column:1/-1;border-right:0;padding-right:0}
+.trust .t:nth-last-child(-n+2){border-bottom:0}
 .trust .v{font-family:var(--display);font-size:clamp(24px,2.6vw,34px);line-height:1}
 .trust .k{font-size:12.5px;color:var(--d-text-2);letter-spacing:.02em}
-@media (min-width:900px){.trust .wrap{grid-template-columns:repeat(5,1fr)}.trust .t,.trust .t:nth-child(odd),.trust .t:nth-child(even){border-right:1px solid var(--d-line);border-bottom:0;padding:24px 18px}.trust .t:first-child{padding-left:0}.trust .t:last-child{border-right:0;grid-column:auto;padding-right:0}}
+@media (min-width:900px){.trust .wrap{grid-template-columns:repeat(4,1fr)}.trust .t,.trust .t:nth-child(odd),.trust .t:nth-child(even){border-right:1px solid var(--d-line);border-bottom:0;padding:24px 18px}.trust .t:first-child{padding-left:0}.trust .t:last-child{border-right:0;padding-right:0}}
 
 /* Pixel icons */
 .px{width:28px;height:28px;flex:none}
@@ -229,6 +229,33 @@ section.alt{background:var(--l0)}
 .seg button[aria-pressed=true]{background:#fff;color:#111}
 .gapnote{font-family:var(--display);font-size:clamp(20px,2vw,26px);line-height:1.3;color:#fff;margin-top:6px;max-width:26ch}
 .gapnote em{font-style:normal;color:var(--yellow)}
+/* Last 12 months */
+.yr{display:grid;gap:28px}
+@media (min-width:900px){.yr{grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}}
+.ychart{background:var(--d1);border:1px solid var(--d-line);border-radius:14px;padding:18px 14px 10px;min-width:0}
+@media (min-width:700px){.ychart{padding:24px 22px 14px}}
+.ychart svg{width:100%;height:auto;display:block;overflow:visible}
+.ychart .gl{stroke:var(--d-line);stroke-width:1}
+.ychart .z{stroke:#4A4A4A;stroke-width:1;stroke-dasharray:3 5}
+.ychart .yl{font-family:var(--body);font-size:15px;fill:var(--d-text-3);letter-spacing:.04em}
+@media (min-width:700px){.ychart .yl{font-size:11px}.ychart .yel{font-size:12.5px}}
+.ychart .ln{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;transition:stroke-dashoffset 2.2s var(--ease)}
+.ychart .ln.up{stroke:var(--green)}.ychart .ln.dn{stroke:var(--red-300);stroke-width:2.5;transition-delay:.3s}
+.ychart .aup,.ychart .adn{opacity:0;transition:opacity 1.2s ease 1.3s}
+.ychart .aup{fill:var(--green)}.ychart .adn{fill:var(--red-300)}
+.ychart.go .ln{stroke-dashoffset:0!important}
+.ychart.go .aup{opacity:.14}.ychart.go .adn{opacity:.12}
+.ychart circle,.ychart .yel{opacity:0;transition:opacity .6s ease 2s}
+.ychart.go circle,.ychart.go .yel{opacity:1}
+.ychart .eup{fill:var(--green)}.ychart .edn{fill:var(--red-300)}
+.ychart .yel{font-family:var(--body);font-size:17px;font-weight:700;fill:#fff}
+.ychart .yel.edn{fill:var(--red-300)}.ychart .yel.eup{fill:var(--green)}
+.yr-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ys{display:grid;gap:8px;align-content:start;padding:18px 16px 20px;border-radius:12px;background:var(--d1);border:1px solid var(--d-line);min-width:0}
+.ys .v{font-family:var(--display);font-size:clamp(34px,4vw,52px);line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ys.up .v{color:var(--green)}.ys.dn .v{color:var(--red-300)}
+.ys .k{font-size:13px;color:var(--d-text-2);line-height:1.4}
+.yr .gapnote{margin-top:18px}
 
 /* Instruments: six micro-visualisations */
 .inst{display:grid;gap:14px}
@@ -395,8 +422,8 @@ footer a{color:var(--d-text-2)}
 .stick{position:fixed;left:0;right:0;bottom:0;z-index:35;background:rgba(0,0,0,.92);color:#fff;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--d-line);padding:10px var(--gr) calc(10px + env(safe-area-inset-bottom,0px)) var(--gl);display:flex;align-items:center;gap:14px;transform:translateY(110%);transition:transform .4s var(--ease)}
 .stick.on{transform:none}
 .stick .s{display:grid;gap:2px;line-height:1.2;min-width:0;background:none;border:0;padding:0;color:#fff;text-align:left}
-.stick .s b{font-family:var(--display);font-size:19px;font-weight:400}
-.stick .s small{font-size:12px;color:var(--d-text-2)}
+.stick .s b{font-family:var(--display);font-size:17px;font-weight:400;white-space:nowrap}
+.stick .s small{font-size:11.5px;color:var(--d-text-2);white-space:nowrap}
 .stick .btn{margin-left:auto;flex:none;min-height:46px;padding:0 18px;font-size:15px}
 @media (min-width:900px){.stick{display:none}}
 
@@ -406,7 +433,7 @@ footer a{color:var(--d-text-2)}
 .js .stg>*{opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .js .stg.in>*{opacity:1;transform:none}
 .js .stg.in>*:nth-child(2){transition-delay:.08s}.js .stg.in>*:nth-child(3){transition-delay:.16s}.js .stg.in>*:nth-child(4){transition-delay:.24s}.js .stg.in>*:nth-child(5){transition-delay:.3s}.js .stg.in>*:nth-child(6){transition-delay:.36s}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv,.js .stg>*{opacity:1;transform:none}.hline .p,.hline .g{stroke-dashoffset:0}.hline .f,.hline .dot{opacity:1}.vb .trk i{width:var(--w)}.fg i,.dots i,.step .dot{transform:none;opacity:1}.stk i{width:var(--w)}.chart .ed{opacity:1}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv,.js .stg>*{opacity:1;transform:none}.hline .p,.hline .g{stroke-dashoffset:0}.hline .f,.hline .dot{opacity:1}.vb .trk i{width:var(--w)}.fg i,.dots i,.step .dot{transform:none;opacity:1}.stk i{width:var(--w)}.chart .ed{opacity:1}.ychart .ln{stroke-dashoffset:0!important}.ychart .aup{opacity:.14}.ychart .adn{opacity:.12}.ychart circle,.ychart .yel{opacity:1}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -495,7 +522,6 @@ footer a{color:var(--d-text-2)}
 <!-- S2: TRUST STRIP -->
 <section class="trust dark" aria-label="Trust markers">
   <div class="wrap">
-    <div class="t"><span class="v">SEBI</span><span class="k">Registered Investment Adviser</span></div>
     <div class="t"><span class="v">₹5,000 Cr+</span><span class="k">Wealth managed</span></div>
     <div class="t"><span class="v">3,000+</span><span class="k">Families advised</span></div>
     <div class="t"><span class="v">7L+</span><span class="k">1% Club members</span></div>
@@ -531,10 +557,36 @@ footer a{color:var(--d-text-2)}
         <div class="legend" id="legend">
           <div class="lg" data-k="1"><i style="background:var(--red-300)"></i><span class="n"><b>A typical portfolio</b>7.0% a year, from one client's review</span><span class="v" data-m="1.4026">₹1.40 Cr</span></div>
           <div class="lg" data-k="2"><i style="background:var(--blue)"></i><span class="n"><b>The market</b>13.5% a year, S&amp;P BSE 500 TRI</span><span class="v" data-m="1.8836">₹1.88 Cr</span></div>
-          <div class="lg hi" data-k="3"><i style="background:var(--yellow)"></i><span class="n"><b>1% Club Wealth strategy</b>27.0% a year, five-year CAGR</span><span class="v" data-m="3.3038">₹3.30 Cr</span></div>
+          <div class="lg hi" data-k="3"><i style="background:var(--yellow)"></i><span class="n"><b>1% Club Wealth strategy</b>23.5% a year, since inception</span><span class="v" data-m="2.8730">₹2.87 Cr</span></div>
         </div>
-        <p class="gapnote">On ₹1 Cr, that's a <em id="gapv">₹1.90 Cr</em> difference in five years.</p>
-        <p class="fine">Illustrative arithmetic, not a projection. Rates taken from one client's review and the 1% Club Wealth strategy's five-year CAGR. Past performance is not indicative of future results. Mutual fund and PMS investments are subject to market risks.</p>
+        <p class="gapnote">On ₹1 Cr, that's a <em id="gapv">₹1.47 Cr</em> difference in five years.</p>
+        <p class="fine">Illustrative arithmetic, not a projection. Rates taken from one client's review and the 1% Club Wealth strategy's returns since inception. Past performance is not indicative of future results. Mutual fund and PMS investments are subject to market risks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S3b: THE LAST 12 MONTHS. Diverging lines, drawn on scroll. -->
+<section id="year" class="dark">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <div class="label">The last 12 months</div>
+        <h2 style="margin-top:12px">Most people lost money last year. <em>Our clients didn't.</em></h2>
+      </div>
+      <p class="lede">A year when the market went backwards. Our recommendations finished it up 19.6%.</p>
+    </div>
+    <div class="yr">
+      <div class="ychart rv" id="ychart" aria-label="Last twelve months: our recommendations against the market">
+        <svg viewBox="0 0 640 300" id="ysvg" role="img"></svg>
+      </div>
+      <div class="rv">
+        <div class="yr-stats">
+          <div class="ys up"><span class="v" id="yrUp">+19.6%</span><span class="k">What our recommendations returned, last 12 months</span></div>
+          <div class="ys dn"><span class="v" id="yrDn">−5%</span><span class="k">What the market did, same period</span></div>
+        </div>
+        <p class="gapnote">A <em>24.6-point</em> gap, in one year.</p>
+        <p class="fine">1% Club Wealth strategy, trailing one year, against the NIFTY Smallcap 250 (−4.99%). The shape of the lines is illustrative; the end points are the actual one-year numbers. Past performance is not indicative of future results.</p>
       </div>
     </div>
   </div>
@@ -739,7 +791,7 @@ footer a{color:var(--d-text-2)}
 
 <!-- S12: STICKY MOBILE CTA -->
 <div class="stick" id="stick" aria-hidden="true">
-  <button class="s" type="button" data-go data-src="sticky-text" tabindex="-1"><b>Free portfolio review</b><small>30 minutes · 1% Club Wealth</small></button>
+  <button class="s" type="button" data-go data-src="sticky-text" tabindex="-1"><b>Free portfolio review</b><small>30 min · 1% Club Wealth</small></button>
   <button class="btn" type="button" data-go data-src="sticky" data-cta="short" tabindex="-1">Request a Callback</button>
 </div>
 <noscript><div style="padding:16px;text-align:center;background:#FFF7DB;color:#111">Turn on JavaScript to request a callback, or visit thepersonalcfo.in.</div></noscript>
@@ -812,7 +864,7 @@ footer a{color:var(--d-text-2)}
     var svg = $('#gsvg'); if (!svg) return;
     var NS = 'http://www.w3.org/2000/svg';
     var W = 640, H = 330, L = 44, R = 126, T = 18, B = 34, VMAX = 3.5;
-    var rates = [0.07, 0.135, 0.27], ids = ['c1','c2','c3'], names = ['Typical', 'Market', '1% Club Wealth'];
+    var rates = [0.07, 0.135, 0.235], ids = ['c1','c2','c3'], names = ['Typical', 'Market', '1% Club Wealth'];
     function x(t){ return L + t / 5 * (W - L - R); }
     function y(v){ return H - B - (v - 1) / (VMAX - 1) * (H - B - T); }
     function pathFor(r){ var d = ''; for (var i = 0; i <= 50; i++){ var t = i / 10, v = Math.pow(1 + r, t); d += (i ? ' L ' : 'M ') + x(t).toFixed(1) + ' ' + y(v).toFixed(1); } return d; }
@@ -845,9 +897,9 @@ footer a{color:var(--d-text-2)}
       });
       $$('#gends .el').forEach(function(t){ t.textContent = t.getAttribute('data-n') + ' ' + fmtCr(+t.getAttribute('data-m') * corpus); });
       $$('#ggrid .gl').forEach(function(t){ t.textContent = '₹' + (+t.getAttribute('data-m') * corpus) + ' Cr'; });
-      var gapEl = $('#gapv'), gap = (3.3038 - 1.4026) * corpus;
+      var gapEl = $('#gapv'), gap = (2.8730 - 1.4026) * corpus;
       if (animate) countUp(gapEl, 0, gap, fmtCr, 1400, 900); else gapEl.textContent = fmtCr(gap);
-      $('.gapnote').firstChild.textContent = 'On ₹' + corpus + ' Cr, that gap is ';
+      $('.gapnote').firstChild.textContent = 'On ₹' + corpus + ' Cr, that\'s a ';
     }
     function draw(){
       if (drawn) { relabel(false); return; }
@@ -907,6 +959,44 @@ footer a{color:var(--d-text-2)}
     }
     layout(); window.addEventListener('resize', layout);
     onView(path, function(){ path.classList.add('go'); }, 0.3);
+  })();
+
+  /* ---------- Last 12 months: diverging lines ---------- */
+  (function(){
+    var svg = $('#ysvg'), card = $('#ychart'); if (!svg || !card) return;
+    var W = 640, H = 300, L = 44, R = 150, T = 26, B = 36, MIN = -12, MAX = 24;
+    var up = [0, 1.5, -1, 3, 5.5, 4, 8, 7.5, 11, 13.5, 12, 17, 19.6];
+    var dn = [0, -2, -4.5, -1.5, -6, -8.5, -5, -9.5, -7, -11, -6.5, -8.5, -5];
+    function x(i){ return L + i / 12 * (W - L - R); }
+    function y(v){ return T + (MAX - v) / (MAX - MIN) * (H - T - B); }
+    function smooth(arr){
+      var pts = arr.map(function(v, i){ return [x(i), y(v)]; }), d = 'M' + pts[0][0].toFixed(1) + ' ' + pts[0][1].toFixed(1);
+      for (var i = 0; i < pts.length - 1; i++){
+        var p0 = pts[Math.max(i - 1, 0)], p1 = pts[i], p2 = pts[i + 1], p3 = pts[Math.min(i + 2, pts.length - 1)];
+        d += ' C' + (p1[0] + (p2[0] - p0[0]) / 6).toFixed(1) + ' ' + (p1[1] + (p2[1] - p0[1]) / 6).toFixed(1) + ' ' + (p2[0] - (p3[0] - p1[0]) / 6).toFixed(1) + ' ' + (p2[1] - (p3[1] - p1[1]) / 6).toFixed(1) + ' ' + p2[0].toFixed(1) + ' ' + p2[1].toFixed(1);
+      }
+      return d;
+    }
+    var NS = 'http://www.w3.org/2000/svg';
+    function el(tag, attrs){ var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); svg.appendChild(e); return e; }
+    [20, 10, 0, -10].forEach(function(v){
+      el('line', { x1: L, x2: W - R, y1: y(v), y2: y(v), 'class': v === 0 ? 'z' : 'gl' });
+      el('text', { x: L - 8, y: y(v) + 4, 'class': 'yl', 'text-anchor': 'end' }).textContent = (v > 0 ? '+' : '') + v + '%';
+    });
+    el('text', { x: x(0), y: H - 10, 'class': 'yl' }).textContent = '12 months ago';
+    el('text', { x: x(12), y: H - 10, 'class': 'yl', 'text-anchor': 'end' }).textContent = 'Today';
+    var dUp = smooth(up), dDn = smooth(dn), base = ' L' + x(12).toFixed(1) + ' ' + y(0).toFixed(1) + ' L' + x(0).toFixed(1) + ' ' + y(0).toFixed(1) + ' Z';
+    el('path', { d: dUp + base, 'class': 'aup' }); el('path', { d: dDn + base, 'class': 'adn' });
+    var pUp = el('path', { d: dUp, 'class': 'ln up' }), pDn = el('path', { d: dDn, 'class': 'ln dn' });
+    [pUp, pDn].forEach(function(p){ var len = p.getTotalLength(); p.style.strokeDasharray = len; p.style.strokeDashoffset = len; });
+    el('circle', { cx: x(12), cy: y(19.6), r: 5, 'class': 'eup' }); el('circle', { cx: x(12), cy: y(-5), r: 5, 'class': 'edn' });
+    el('text', { x: x(12) + 12, y: y(19.6) + 4, 'class': 'yel eup' }).textContent = '+19.6% ours';
+    el('text', { x: x(12) + 12, y: y(-5) + 4, 'class': 'yel edn' }).textContent = '\u22125% market';
+    onView(card, function(){
+      card.classList.add('go');
+      countUp($('#yrUp'), 0, 19.6, function(v){ return '+' + v.toFixed(1) + '%'; }, 1800, 400);
+      countUp($('#yrDn'), 0, 5, function(v){ return '\u2212' + Math.round(v) + '%'; }, 1800, 700);
+    }, 0.35);
   })();
 
   /* ---------- Before / after counters ---------- */
