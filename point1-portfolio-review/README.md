@@ -1,11 +1,21 @@
-# 1% Club Wealth · Portfolio Review LP (v4 draft)
+# 1% Club Wealth · Portfolio Review LP (v4.1 draft)
 
 **File:** `point1-portfolio-review/index.html` (single file, no dependencies beyond Google Fonts)
 **Replaces:** thepersonalcfo.in
 **Job:** turn Sharan's "free portfolio review" ads into OTP-verified callback requests from investors with ₹50 L+ portfolios. The managed-strategies conversation happens on the call, not on the page.
-**Status:** v4 draft for brand review. Preview mode is on (no SMS, any 6-digit OTP passes).
+**Status:** v4.1 draft for brand review. Preview mode is on (no SMS, any 6-digit OTP passes).
 
 ---
+
+## What changed in v4.1 (25 Oct, round two)
+
+| Ask | What changed |
+| --- | --- |
+| Strategy returns to 23.5% | Gap chart legend now reads "23.5% a year, since inception" (the PMS page shows 23.52% since inception vs 13.85% for the benchmark, so "five-year CAGR" was dropped). Curve, end value (₹2.87 Cr on ₹1 Cr) and the gap line (₹1.47 Cr) recomputed. The ₹2 Cr and ₹5 Cr toggles scale from the same number. |
+| Remove SEBI from the trust strip | The "SEBI Registered Investment Adviser" tile is gone. Four tiles remain, 2×2 on phones. SEBI still appears in the header pill, the hero line, the founder section, the FAQ and the footer legal line; those were left as they were and need the same call (the brand suggested "Qualified wealth planner" as the replacement). |
+| Show the last 12 months: recommendations +19.6%, market down | New section **The last 12 months** after the gap chart, with its own illustration: two lines drawn on scroll, ours climbing to +19.6% and the market dipping to −5%, with shaded areas, end markers, two stat tiles and the line "A 24.6-point gap, in one year." Headline: "Most people lost money last year. Our clients didn't." The market figure is the NIFTY Smallcap 250 at −4.99% from the PMS page, rounded to −5% (Arjun's note said 6%; one string to swap if the brand prefers it). The shape of the lines is illustrative and the fine print says so; only the end points are real. |
+
+Also: the ₹2 Cr / ₹5 Cr toggle sentence now reads "that's a" like the static line, and the phone sticky bar no longer wraps.
 
 ## What changed in v4 (25 Oct, after the brand's feedback)
 
@@ -62,8 +72,9 @@ For sign-off. This is the full visible text, top to bottom.
 | --- | --- | --- |
 | Header | Logo + one CTA | |
 | Hero + form | Headline, two lines, the request form | Compounding line draws on load |
-| Trust strip | SEBI RIA, ₹5,000 Cr+, 3,000+ families, 7L+ members, 30 min | |
+| Trust strip | ₹5,000 Cr+, 3,000+ families, 7L+ members, 30 min | |
 | The gap | ₹1 Cr, five years, three rates | Curves draw, values count, toggle rescales |
+| The last 12 months | +19.6% vs −5%, two stat tiles | Diverging lines draw, areas fade in, counters run |
 | Five readings | The checks, one micro-viz each | Bars, grid, stack, dots, counter |
 | Three steps | Request, review, report | Dotted path draws through the nodes |
 | After the call | Three deliverables, then the sample report card | Counters run from before to after inside the card |
@@ -145,11 +156,13 @@ Tracking: paste the Meta Pixel and GA4/GTM snippets in the head comment. The pag
 
 | Claim | Where it came from | Confidence |
 | --- | --- | --- |
-| SEBI Registered Investment Adviser | Inc42, Entrepreneur India, Feb 2025 | High |
 | ₹5,000 Cr+ wealth managed, "managing ₹5,000 Cr+" | Arjun's brief, matches the review doc | Medium. Public press says ₹2,000 Cr under advisory and ₹4,000 to 5,000 Cr tracked. Client sign-off needed. |
 | 3,000+ families advised | Review doc | Medium |
 | 7L+ 1% Club members | Pro checkout page trust strip | Medium. App launch decks say 6L+ users. |
-| 27.0% a year, five-year CAGR (gap chart) | Review doc | Client's own number. PMS performance on a public page, needs compliance sign-off. |
+| 23.5% a year, since inception (gap chart) | PMS page screenshot: QGF since inception 23.52% vs NIFTY Smallcap 250 at 13.85% | Client's own number. PMS performance on a public page, needs compliance sign-off. |
+| +19.6% trailing one year, market −5% (NIFTY Smallcap 250 at −4.99%) | PMS page screenshot | Client's own number. Same sign-off. Arjun's brief said the market was down 6%; the page uses the PMS page's 4.99%, rounded. |
+| "Most people lost money last year. Our clients didn't." | Arjun's brief ("basically all our clients made money last year") | Absolute claim. Needs compliance sign-off or a softer line such as "People on our plan didn't." |
+| SEBI mentions outside the trust strip (header pill, hero line, founder, FAQ, footer) | v3 | The brand says the wealth arm is a distribution business, so these need the same decision as the trust strip. |
 | "Rohan M., 38", ₹1.6 Cr, 22 funds, 35 stocks, 5 deposits, since 2017 | Composite built from the sample review doc's numbers. The name and profile are invented. | Needs the client to either confirm a real anonymised case or keep it labelled as a sample. The page says "One portfolio, one review, name changed" and "Illustrative, not advice." |
 | "India's first creator-led firm to hold a SEBI RIA licence" | Press coverage of the RIA licence | Medium |
 | "Calls within 24 hours" (A, B), "within 48 hours" (C), "Next available slot: within 48 hours", "Limited review slots each week" | Service promises I set | Needs ops sign-off |
